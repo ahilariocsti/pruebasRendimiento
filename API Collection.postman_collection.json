@@ -54,7 +54,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"idEspacio\": 1,\n  \"idRecurso\": \"S001\",\n  \"idBiblioteca\": 11,\n  \"idPolideportivo\": 7\n}",
+							"raw": "{\n  \"idEspacio\": 1,\n  \"idRecurso\": \"S001\",\n  \"idBiblioteca\": 11,\n  \"idPolideportivo\": 0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
