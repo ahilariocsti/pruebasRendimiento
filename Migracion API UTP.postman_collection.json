@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "a7e20b57-2b22-49d0-a2be-b8d1b287a2f0",
+		"_postman_id": "501eb76d-2e40-423e-b818-b6036171059c",
 		"name": "Migracion API UTP",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "28518995"
+		"_exporter_id": "15071533"
 	},
 	"item": [
 		{
@@ -339,7 +339,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"codigoUsuario\": \"amenacho\",\n    \"idTallerVirtual\": 263618,\n    \"destacar\": true,\n    \"diaUnico\": {\n        \"fecha\": 1745557200000,\n        \"horaInicio\": 1260,\n        \"horaFin\": 1290\n    },\n    \"idUbicacion\": 2,\n    \"descripcion\": \"Prueba Taller\",\n    \"idCampusDetalle\": 1,\n    \"tipoInstalacion\": \"LCYS\",\n    \"idInstalacion\": \"09C0509\",\n    \"codigoAmbiente\": \"C0509\",\n    \"direccion\": \"Av. Petit Thouars 116\",\n    \"piso\": \"05\",\n    \"capacidadAmbiente\": 36\n}",
+							"raw": "{\n    \"codigoUsuario\": \"amenacho\",\n    \"idTallerVirtual\": 263622,\n    \"destacar\": true,\n    \"diaUnico\": {\n        \"fecha\": 1745730000000,\n        \"horaInicio\": 1260,\n        \"horaFin\": 1290\n    },\n    \"idUbicacion\": 2,\n    \"descripcion\": \"Prueba Taller\",\n    \"idCampusDetalle\": 1,\n    \"tipoInstalacion\": \"LCYS\",\n    \"idInstalacion\": \"09C0509\",\n    \"codigoAmbiente\": \"C0509\",\n    \"direccion\": \"Av. Petit Thouars 116\",\n    \"piso\": \"05\",\n    \"capacidadAmbiente\": 36\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -582,6 +582,33 @@
 							],
 							"path": [
 								"PeriodoRefuerzoAcademico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRefuerzoAcademico/Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigoAlumno\":\"user\",\r\n  \"idTallerVirtual\":\"263612\",\r\n  \"codigoUsuario\":\"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRefuerzoAcademico/Crear",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRefuerzoAcademico",
+								"Crear"
 							]
 						}
 					},
@@ -974,7 +1001,13 @@
 					"name": "/ReservaEspacio/AnularReservaEspacio",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "APIKEY",
+								"value": "nRAGDD94VIyJ6o7W3eJyw2h90moSQyhp3xi6IUcmJPw=",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{baseUrl}}/ReservaEspacio/AnularReservaEspacio/21/U24271045",
 							"host": [
@@ -1131,6 +1164,672 @@
 								"ObtenerNuevoNombreServGeneral",
 								"S001",
 								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/ValidarEliminacion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idsDetalleReserva\": [865962],\n  \"idsAlumnosSancionados\": [3157],\n  \"idServicioPrestamo\": \"S003\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/ValidarEliminacion",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"ValidarEliminacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/ValidarEditarSancion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idsDetalleReserva\": [865962],\n  \"idsAlumnosSancionados\": [3157],\n  \"idServicioPrestamo\": \"S003\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/ValidarEditarSancion",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"ValidarEditarSancion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/ValidarCrearSancion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idsDetalleReserva\": [865962],\n  \"idsAlumnosSancionados\": [3157],\n  \"idServicioPrestamo\": \"S003\"\n}\n\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/ValidarCrearSancion",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"ValidarCrearSancion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/SancionarAlumno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idsAlumnosSancionados\": [3157],\n  \"idsDetalleReserva\": [865962],\n  \"idMotivo\": 0,\n  \"idBloqueo\": 0,\n  \"dias\": 10,\n  \"detalles\": \"\",\n  \"idServicioPrestamo\": \"S003\",\n  \"codigoUsuario\": \"azamudio\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/SancionarAlumno",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"SancionarAlumno"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/ReservaManual",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idRecurso\": \"T90010\",\n  \"nombre\": \"Reserva para Taller \",\n  \"detalles\": \"reserva manual\",\n  \"fecha\": 1689811200000,\n  \"horaInicio\": 1689870600000,\n  \"horaFin\": 1689876000000,\n  \"codigoUsuario\": \"admin123\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/ReservaManual",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"ReservaManual"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Recurso/CrearServicioElectronico",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idServicioGeneral\": \"string\",\n  \"idServicioPrestamo\": \"string\",\n  \"idCampus\": 0,\n  \"idBiblioteca\": 0,\n  \"idMarca\": 0,\n  \"nombre\": \"string\",\n  \"modelo\": \"string\",\n  \"serie\": \"string\",\n  \"codigoBarras\": \"string\",\n  \"detalles\": \"string\",\n  \"codigoUsuario\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Recurso/CrearServicioElectronico",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Recurso",
+								"CrearServicioElectronico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Recurso/CrearSalasGrupales",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idServicioGeneral\": \"string\",\n  \"idServicioPrestamo\": \"string\",\n  \"idCampus\": 0,\n  \"idBiblioteca\": 0,\n  \"nombre\": \"string\",\n  \"detalles\": \"string\",\n  \"capacidad\": 0,\n  \"idPantalla\": 0,\n  \"direccion\": \"string\",\n  \"ambiente\": \"string\",\n  \"codigoUsuario\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Recurso/CrearSalasGrupales",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Recurso",
+								"CrearSalasGrupales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Recurso/EditarSalasGrupales",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idServicioGeneral\": \"string\",\n  \"idServicioPrestamo\": \"string\",\n  \"idCampus\": 0,\n  \"idBiblioteca\": 0,\n  \"nombre\": \"string\",\n  \"detalles\": \"string\",\n  \"capacidad\": 0,\n  \"idPantalla\": 0,\n  \"direccion\": \"string\",\n  \"ambiente\": \"string\",\n  \"codigoUsuario\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Recurso/EditarSalasGrupales",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Recurso",
+								"EditarSalasGrupales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Recurso/ObtenerListaServicios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idServicioPrestamo\": \"string\",\n  \"idCampus\": 0,\n  \"idBiblioteca\": 0,\n  \"fecha\": 0,\n  \"pagina\": 0,\n  \"codigoUsuario\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Recurso/ObtenerListaServicios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Recurso",
+								"ObtenerListaServicios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Recurso/EditarServicioElectronico",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idServicioGeneral\": \"string\",\n  \"idServicioPrestamo\": \"string\",\n  \"idCampus\": 0,\n  \"idBiblioteca\": 0,\n  \"idMarca\": 0,\n  \"nombre\": \"string\",\n  \"modelo\": \"string\",\n  \"serie\": \"string\",\n  \"codigoBarras\": \"string\",\n  \"detalles\": \"string\",\n  \"codigoUsuario\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Recurso/EditarServicioElectronico",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Recurso",
+								"EditarServicioElectronico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Recurso/EditarActivo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Recurso/EditarActivo",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Recurso",
+								"EditarActivo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Recurso/EliminarServicio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Recurso/EliminarServicio",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Recurso",
+								"EliminarServicio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/ReservaAlumno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idServicio\": \"string\",\n  \"idBiblioteca\": 0,\n  \"codAlumno\": \"string\",\n  \"nombreAlumno\": \"string\",\n  \"fecha\": \"string\",\n  \"horaInicio\": \"string\",\n  \"horaFin\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/ReservaAlumno",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"ReservaAlumno"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/ObtenerRecursoDisponibleReasignacion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/ObtenerRecursoDisponibleReasignacion",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"ObtenerRecursoDisponibleReasignacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/ReasignarReserva",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/ReasignarReserva",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"ReasignarReserva"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/CancelarReserva",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/CancelarReserva",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"CancelarReserva"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/GuardarReserva",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/GuardarReserva",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"GuardarReserva"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Recurso/ListarMotivoSancion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Recurso/ListarMotivoSancion",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Recurso",
+								"ListarMotivoSancion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Recurso/ListarSanciones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Recurso/ListarSanciones",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Recurso",
+								"ListarSanciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/Recurso/ListarBloqueos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Recurso/ListarBloqueos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Recurso",
+								"ListarBloqueos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/EditarSancionAlumno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idsAlumnosSancionados\": [\n    0\n  ],\n  \"idsDetalleReserva\": [\n    0\n  ],\n  \"idMotivo\": 0,\n  \"idBloqueo\": 0,\n  \"dias\": 0,\n  \"detalles\": \"string\",\n  \"idServicioPrestamo\": \"string\",\n  \"codigoUsuario\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/EditarSancionAlumno",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"EditarSancionAlumno"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/BuscarAlumnos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/BuscarAlumnos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"BuscarAlumnos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/AgregarAlumno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idReserva\": 0,\n  \"estudiantes\": [\n    {\n      \"codAlumno\": \"string\",\n      \"nombreAlumno\": \"string\"\n    }\n  ],\n  \"codigoUsuario\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/AgregarAlumno",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"AgregarAlumno"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/EliminarAlumno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idsDetalleReserva\": [\n    0\n  ],\n  \"codigoUsuario\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/EliminarAlumno",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"EliminarAlumno"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/ReservaRecurso/AsistenciaAlumno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idsDetalleReserva\": [\n    0\n  ],\n  \"codigoUsuario\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ReservaRecurso/AsistenciaAlumno",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ReservaRecurso",
+								"AsistenciaAlumno"
 							]
 						}
 					},
@@ -4319,1039 +5018,6 @@
 							],
 							"path": [
 								"Ubicacion"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "ReservaRecurso",
-			"item": [
-				{
-					"name": "/Recurso/ListarServiciosPrestamo",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/ListarServiciosPrestamo",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"ListarServiciosPrestamo"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaEspacio/ListarFechas",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "APIKEY",
-								"value": "nRAGDD94VIyJ6o7W3eJyw2h90moSQyhp3xi6IUcmJPw=",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"codAlumno\": \"U24271045\",\r\n    \"idCampus\": 57,\r\n    \"idActividad\": 21\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaEspacio/ListarFechas",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaEspacio",
-								"ListarFechas"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaEspacio/ListarEspaciosPreviaReserva",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "APIKEY",
-								"value": "nRAGDD94VIyJ6o7W3eJyw2h90moSQyhp3xi6IUcmJPw=",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"codAlumno\": \"U24271045\",\r\n    \"idCampus\": 1,\r\n    \"idActividad\": 1,\r\n    \"fecha\":1739854800000,\r\n    \"horaInicio\":\"14:00\",\r\n    \"horaFin\":\"15:00\"\r\n\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaEspacio/ListarEspaciosPreviaReserva",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaEspacio",
-								"ListarEspaciosPreviaReserva"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaEspacio/ListarActividadesPorCampus",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "APIKEY",
-								"value": "nRAGDD94VIyJ6o7W3eJyw2h90moSQyhp3xi6IUcmJPw=",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaEspacio/ListarActividadesPorCampus/1",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaEspacio",
-								"ListarActividadesPorCampus",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaEspacio/DetalleReserva",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaEspacio/DetalleReserva/5",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaEspacio",
-								"DetalleReserva",
-								"5"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/ListarMarcas",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/ListarMarcas",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"ListarMarcas"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/ListarPantallas",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/ListarPantallas",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"ListarPantallas"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/ListarBibliotecas",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/ListarBibliotecas",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"ListarBibliotecas"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ObtenerNuevoNombreServGeneral/{idServicioPrestamo}/{idBiblioteca}",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/ObtenerNuevoNombreServGeneral/{idServicioPrestamo}/{idBiblioteca}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ObtenerNuevoNombreServGeneral",
-								"{idServicioPrestamo}",
-								"{idBiblioteca}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/CrearServicioElectronico",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idServicioGeneral\": \"string\",\n  \"idServicioPrestamo\": \"string\",\n  \"idCampus\": 0,\n  \"idBiblioteca\": 0,\n  \"idMarca\": 0,\n  \"nombre\": \"string\",\n  \"modelo\": \"string\",\n  \"serie\": \"string\",\n  \"codigoBarras\": \"string\",\n  \"detalles\": \"string\",\n  \"codigoUsuario\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/CrearServicioElectronico",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"CrearServicioElectronico"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaEspacio/CrearReservaAlumno",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n        \"idCampus\":1,\n        \"idActividad\": 1,\n        \"fecha\": 1740459600000,\n        \"horaInicio\":\"10:00\",\n         \"horaFin\": \"11:00\",\n        \"idEspacioUniversitario\": 49,\n         \"responsable\": \n         {\n            \"codAlumno\":\"U24271045\",\n            \"nombreAlumno\":\"SANCHEZ CABRERA MARTIN NICKOLAS\"\n         },\n          \"participantes\":\n         [\n            {\n            \"codAlumno\":\"U20242719\",\n            \"nombreAlumno\":\"ALDO ANDRE MARTINEZ SANCHEZ\"\n            }\n         ]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaEspacio/CrearReservaAlumno",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaEspacio",
-								"CrearReservaAlumno"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaEspacio/AnularReservaEspacio",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/ReservaEspacio/AnularReservaEspacio/893/U24271045",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaEspacio",
-								"AnularReservaEspacio",
-								"893",
-								"U24271045"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/CrearSalasGrupales",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idServicioGeneral\": \"string\",\n  \"idServicioPrestamo\": \"string\",\n  \"idCampus\": 0,\n  \"idBiblioteca\": 0,\n  \"nombre\": \"string\",\n  \"detalles\": \"string\",\n  \"capacidad\": 0,\n  \"idPantalla\": 0,\n  \"direccion\": \"string\",\n  \"ambiente\": \"string\",\n  \"codigoUsuario\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/CrearSalasGrupales",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"CrearSalasGrupales"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/EditarSalasGrupales",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idServicioGeneral\": \"string\",\n  \"idServicioPrestamo\": \"string\",\n  \"idCampus\": 0,\n  \"idBiblioteca\": 0,\n  \"nombre\": \"string\",\n  \"detalles\": \"string\",\n  \"capacidad\": 0,\n  \"idPantalla\": 0,\n  \"direccion\": \"string\",\n  \"ambiente\": \"string\",\n  \"codigoUsuario\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/EditarSalasGrupales",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"EditarSalasGrupales"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/EditarServicioElectronico",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idServicioGeneral\": \"string\",\n  \"idServicioPrestamo\": \"string\",\n  \"idCampus\": 0,\n  \"idBiblioteca\": 0,\n  \"idMarca\": 0,\n  \"nombre\": \"string\",\n  \"modelo\": \"string\",\n  \"serie\": \"string\",\n  \"codigoBarras\": \"string\",\n  \"detalles\": \"string\",\n  \"codigoUsuario\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/EditarServicioElectronico",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"EditarServicioElectronico"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/ObtenerListaServicios",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idServicioPrestamo\": \"string\",\n  \"idCampus\": 0,\n  \"idBiblioteca\": 0,\n  \"fecha\": 0,\n  \"pagina\": 0,\n  \"codigoUsuario\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/ObtenerListaServicios",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"ObtenerListaServicios"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/ObtenerListaServiciosDisponibles",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idServicioPrestamo\": \"S001\",\n  \"idCampus\": 58,\n  \"idBiblioteca\": 9,\n  \"fecha\": \"02/11/2024\",\n  \"horaIni\": \"10:00\",\n  \"horaFin\": \"12:00\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/ObtenerListaServiciosDisponibles",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"ObtenerListaServiciosDisponibles"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/EditarActivo",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/EditarActivo",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"EditarActivo"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/EliminarServicio",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/EliminarServicio",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"EliminarServicio"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/ReservaManual",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idRecurso\": \"string\",\n  \"nombre\": \"string\",\n  \"detalles\": \"string\",\n  \"fecha\": 0,\n  \"horaInicio\": 0,\n  \"horaFin\": 0,\n  \"codigoUsuario\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/ReservaManual",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"ReservaManual"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/ReservaAlumno",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idServicio\": \"string\",\n  \"idBiblioteca\": 0,\n  \"codAlumno\": \"string\",\n  \"nombreAlumno\": \"string\",\n  \"fecha\": \"string\",\n  \"horaInicio\": \"string\",\n  \"horaFin\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/ReservaAlumno",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"ReservaAlumno"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/ReservaAlumnoRecursoSeleccionado",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idServicio\": \"S001\",\n  \"idServicioGeneral\": \"T90009\",\n  \"idBiblioteca\": 9,\n  \"codAlumno\": \"U24271045\",\n  \"nombreAlumno\": \"SANCHEZ CABRERA MARTIN NICKOLAS\",\n  \"fecha\": \"26/02/2025\",\n  \"horaInicio\": \"10:00\",\n  \"horaFin\": \"11:00\",\n  \"alumnos\": {\n    \"idReserva\": 0,\n    \"estudiantes\": [\n      {\n        \"codAlumno\": \"\",\n        \"nombreAlumno\": \"\"\n      }\n    ],\n    \"codigoUsuario\": \"\"\n  }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/ReservaAlumnoRecursoSeleccionado",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"ReservaAlumnoRecursoSeleccionado"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/ObtenerRecursoDisponibleReasignacion",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/ObtenerRecursoDisponibleReasignacion",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"ObtenerRecursoDisponibleReasignacion"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/ReasignarReserva",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/ReasignarReserva",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"ReasignarReserva"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/CancelarReserva",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/CancelarReserva",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"CancelarReserva"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/GuardarReserva",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/GuardarReserva",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"GuardarReserva"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/ListarMotivoSancion",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/ListarMotivoSancion",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"ListarMotivoSancion"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/ListarSanciones",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/ListarSanciones",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"ListarSanciones"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/ListarBloqueos",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/ListarBloqueos",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"ListarBloqueos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/ValidarCrearSancion",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idsDetalleReserva\": [\n    0\n  ],\n  \"idsAlumnosSancionados\": [\n    0\n  ],\n  \"idServicioPrestamo\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/ValidarCrearSancion",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"ValidarCrearSancion"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/ValidarEditarSancion",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idsDetalleReserva\": [\n    0\n  ],\n  \"idsAlumnosSancionados\": [\n    0\n  ],\n  \"idServicioPrestamo\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/ValidarEditarSancion",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"ValidarEditarSancion"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/ValidarEliminacion",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idsDetalleReserva\": [\n    0\n  ],\n  \"idsAlumnosSancionados\": [\n    0\n  ],\n  \"idServicioPrestamo\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/ValidarEliminacion",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"ValidarEliminacion"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/SancionarAlumno",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idsAlumnosSancionados\": [\n    0\n  ],\n  \"idsDetalleReserva\": [\n    0\n  ],\n  \"idMotivo\": 0,\n  \"idBloqueo\": 0,\n  \"dias\": 0,\n  \"detalles\": \"string\",\n  \"idServicioPrestamo\": \"string\",\n  \"codigoUsuario\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/SancionarAlumno",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"SancionarAlumno"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/EditarSancionAlumno",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idsAlumnosSancionados\": [\n    0\n  ],\n  \"idsDetalleReserva\": [\n    0\n  ],\n  \"idMotivo\": 0,\n  \"idBloqueo\": 0,\n  \"dias\": 0,\n  \"detalles\": \"string\",\n  \"idServicioPrestamo\": \"string\",\n  \"codigoUsuario\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/EditarSancionAlumno",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"EditarSancionAlumno"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/BuscarAlumnos",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/BuscarAlumnos",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"BuscarAlumnos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/AgregarAlumno",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idReserva\": 0,\n  \"estudiantes\": [\n    {\n      \"codAlumno\": \"string\",\n      \"nombreAlumno\": \"string\"\n    }\n  ],\n  \"codigoUsuario\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/AgregarAlumno",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"AgregarAlumno"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/EliminarAlumno",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idsDetalleReserva\": [\n    0\n  ],\n  \"codigoUsuario\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/EliminarAlumno",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"EliminarAlumno"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/ReservaRecurso/AsistenciaAlumno",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"idsDetalleReserva\": [\n    0\n  ],\n  \"codigoUsuario\": \"string\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/ReservaRecurso/AsistenciaAlumno",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"ReservaRecurso",
-								"AsistenciaAlumno"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/Recurso/Historial/{idServicio}",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/Recurso/Historial/T90010",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"Recurso",
-								"Historial",
-								"T90010"
 							]
 						}
 					},
